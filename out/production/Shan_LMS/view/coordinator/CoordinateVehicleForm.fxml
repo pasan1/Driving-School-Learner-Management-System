@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="window" prefHeight="621.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.coordinator.CoordinateVehicleFormController">
+    <children>
+        <JFXButton fx:id="btnSearchVehicle" buttonType="RAISED" layoutX="646.0" layoutY="20.0" onAction="#btnSearchVehicleOnAction" prefHeight="45.0" prefWidth="138.0" style="-fx-border-color: black;" text="Search Vehicle" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <TableView fx:id="tblVehicle" layoutX="24.0" layoutY="400.0" prefHeight="208.0" prefWidth="984.0">
+            <columns>
+                <TableColumn fx:id="colVehicleID" prefWidth="127.33333587646484" text="Vehicle ID" />
+                <TableColumn fx:id="colVehicleNumber" prefWidth="181.66666412353516" text="Vehicle Number" />
+                <TableColumn fx:id="colType" prefWidth="126.33332824707031" text="Type" />
+                <TableColumn fx:id="colTransmission" prefWidth="194.33334350585938" text="Transmission" />
+                <TableColumn fx:id="colModel" prefWidth="167.66665649414062" text="Model" />
+                <TableColumn fx:id="colYear" prefWidth="182.33331298828125" text="Year" />
+            </columns>
+        </TableView>
+        <TextField fx:id="txtSearchVehicle" layoutX="255.0" layoutY="29.0" prefHeight="25.0" prefWidth="308.0" promptText="Search Vehicle">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <AnchorPane fx:id="paneVehicleEdit" disable="true" layoutX="21.0" layoutY="60.0" prefHeight="330.0" prefWidth="1005.0">
+            <children>
+                <Text layoutX="328.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vehicle ID :">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+                <JFXTextField fx:id="txtVehicleNumber" labelFloat="true" layoutX="213.0" layoutY="71.0" prefHeight="25.0" prefWidth="300.0" promptText="Vehicle Number" />
+                <JFXTextField fx:id="txtModel" labelFloat="true" layoutX="215.0" layoutY="220.0" prefHeight="25.0" prefWidth="300.0" promptText="Model" />
+                <JFXTextField fx:id="txtYear" labelFloat="true" layoutX="215.0" layoutY="267.0" prefHeight="25.0" prefWidth="300.0" promptText="Year" />
+                <Text fx:id="lblVehicleID" layoutX="464.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" text="000">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+                <JFXButton fx:id="btnAdd" buttonType="RAISED" layoutX="773.0" layoutY="243.0" onAction="#btnAddOnAction" prefHeight="22.0" prefWidth="138.0" style="-fx-border-color: blue;" text="Add" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <Line endX="-100.0" endY="162.33334350585938" layoutX="758.0" layoutY="154.0" startX="-100.0" startY="-108.0" />
+                <JFXButton fx:id="btnDelete" layoutX="774.0" layoutY="287.0" onAction="#btnDeleteOnAction" prefHeight="22.0" prefWidth="138.0" style="-fx-border-color: red;" text="Delete" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXComboBox fx:id="cmbTransmission" labelFloat="true" layoutX="215.0" layoutY="171.0" prefHeight="25.0" prefWidth="300.0" promptText="Transmission">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXComboBox>
+            <JFXComboBox fx:id="cmbType" labelFloat="true" layoutX="215.0" layoutY="124.0" prefHeight="25.0" prefWidth="300.0" promptText="Type">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXComboBox>
+            <Text fx:id="txtErrorVehicleNumber" fill="RED" layoutX="215.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Try: AB-1234 or AAA-1234 or 12-1234 or 123-1234" visible="false" />
+            <AnchorPane layoutX="766.0" layoutY="282.0" prefHeight="45.0" prefWidth="168.0" />
+            </children>
+        </AnchorPane>
+      <JFXButton fx:id="btnNewVehicle" buttonType="RAISED" layoutX="834.0" layoutY="20.0" onAction="#btnNewVehicleOnAction" prefHeight="45.0" prefWidth="138.0" style="-fx-border-color: blue;" text="New Vehicle" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text fx:id="txtErrorVehicleNumberInSearch" fill="RED" layoutX="256.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Try: AB-1234 or AAA-1234 or 12-1234 or 123-1234" visible="false" />
+    </children>
+</AnchorPane>

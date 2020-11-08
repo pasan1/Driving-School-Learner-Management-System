@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="window" prefHeight="621.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.PaymentFormController">
+   <children>
+      <Text layoutX="406.0" layoutY="45.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pyament ID :">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="lblIPaymentID" layoutX="557.0" layoutY="47.0" strokeType="OUTSIDE" strokeWidth="0.0" text="000">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="110.0" layoutX="338.0" layoutY="69.0" opacity="0.1" stroke="BLACK" strokeType="INSIDE" width="587.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="47.0" layoutX="376.0" layoutY="186.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" width="302.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="77.0" layoutX="562.0" layoutY="258.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" width="246.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="94.0" layoutX="128.0" layoutY="507.0" opacity="0.1" stroke="BLACK" strokeType="INSIDE" width="255.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" height="84.0" layoutX="716.0" layoutY="383.0" opacity="0.2" stroke="BLACK" strokeType="INSIDE" width="113.0" />
+      <JFXTextField fx:id="txtCustomerName" editable="false" labelFloat="true" layoutX="348.0" layoutY="84.0" prefHeight="30.0" prefWidth="250.0" promptText="Customer Name" />
+      <JFXComboBox fx:id="cmbCustomerNic" editable="true" labelFloat="true" layoutX="69.0" layoutY="84.0" onAction="#cmbCustomerNicOnAction" prefHeight="30.0" prefWidth="250.0" promptText="Customer NIC" />
+      <JFXTextField fx:id="txtCustomerNic" editable="false" labelFloat="true" layoutX="648.0" layoutY="84.0" prefHeight="30.0" prefWidth="250.0" promptText="Customer NIC" />
+      <JFXTextField fx:id="txtCustomerAddress" editable="false" labelFloat="true" layoutX="348.0" layoutY="137.0" prefHeight="30.0" prefWidth="340.0" promptText="Address" />
+      <JFXTextField fx:id="txtCustomerMobileNumber" editable="false" labelFloat="true" layoutX="732.0" layoutY="135.0" prefHeight="30.0" prefWidth="166.0" promptText="Mobile Number" />
+      <Line endX="-439.3333435058594" endY="-108.0" layoutX="532.0" layoutY="355.0" startX="440.66668701171875" startY="-108.0" />
+      <TextField fx:id="txtProgramFee" editable="false" layoutX="581.0" layoutY="194.0" prefHeight="25.0" prefWidth="80.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Text layoutX="393.0" layoutY="213.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount to be paid :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="549.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Rs.">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtPayingAmount" layoutX="290.0" layoutY="297.0" onAction="#txtPayingAmountOnAction" prefHeight="25.0" prefWidth="80.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Text layoutX="244.0" layoutY="281.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Paying Amount out of Fee">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtBalanceProgramFee" editable="false" layoutX="639.0" layoutY="296.0" prefHeight="25.0" prefWidth="80.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Text layoutX="579.0" layoutY="280.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Balance Amount out of Fee">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Line endX="-439.3333435058594" endY="-108.0" layoutX="535.0" layoutY="455.0" startX="440.66668701171875" startY="-108.0" />
+      <JFXComboBox fx:id="cmbPaymentMethod" labelFloat="true" layoutX="152.0" layoutY="424.0" onAction="#cmbPaymentMethodOnAction" prefHeight="30.0" prefWidth="150.0" />
+      <Text layoutX="161.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Payment Method">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <Text layoutX="485.0" layoutY="407.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtAmount" layoutX="476.0" layoutY="426.0" onAction="#txtAmountOnAction" prefHeight="25.0" prefWidth="80.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Text fill="BLUE" layoutX="742.0" layoutY="408.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-background-color: blue;" text="Balance">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtBalance" layoutX="733.0" layoutY="427.0" prefHeight="25.0" prefWidth="80.0" style="-fx-border-color: blue;">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <JFXButton fx:id="btnPay" buttonType="RAISED" disable="true" layoutX="556.0" layoutY="531.0" onAction="#btnPayOnAction" onKeyPressed="#btnPayOnKeyPressed" prefHeight="58.0" prefWidth="148.0" style="-fx-border-color: blue;" text="Pay" textAlignment="CENTER" textFill="BLUE">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+      <Text layoutX="143.0" layoutY="539.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtDate" editable="false" layoutX="204.0" layoutY="519.0" prefHeight="31.0" prefWidth="153.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Text layoutX="143.0" layoutY="579.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Time :">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtTime" editable="false" layoutX="204.0" layoutY="559.0" prefHeight="31.0" prefWidth="153.0">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </TextField>
+      <Text fx:id="txtAlertFullyPaid" fill="RED" layoutX="705.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Custmer Fully Paid" visible="false">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Text>
+      <AnchorPane fx:id="panePay" layoutX="87.0" layoutY="257.0" prefHeight="219.0" prefWidth="903.0" />
+   </children>
+</AnchorPane>

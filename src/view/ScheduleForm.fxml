@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="window" prefHeight="621.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ScheduleFormController">
+    <children>
+        <JFXButton fx:id="btnNewSchedule" buttonType="RAISED" layoutX="842.0" layoutY="22.0" onAction="#btnNewSchedulerOnAction" prefHeight="45.0" prefWidth="138.0" style="-fx-border-color: blue;" text="New Schedule" textAlignment="CENTER">
+            <font>
+                <Font name="System Bold" size="14.0" />
+            </font>
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor>
+        </JFXButton>
+        <TableView fx:id="tblSchedule" layoutX="24.0" layoutY="452.0" prefHeight="156.0" prefWidth="984.0">
+            <columns>
+                <TableColumn fx:id="colScheduleId" prefWidth="108.66666412353516" text="Schedule ID" />
+            <TableColumn fx:id="colCustomerNic" prefWidth="88.33334350585938" text="Customer NIC" />
+                <TableColumn fx:id="colCustomerName" prefWidth="140.66665649414062" text="Customer Name" />
+                <TableColumn fx:id="colInstructorNic" prefWidth="102.3333740234375" text="Instructor NIC" />
+                <TableColumn fx:id="colInstructorName" prefWidth="151.6666259765625" text="Instructor Name" />
+                <TableColumn fx:id="colVehicleNumber" prefWidth="106.66668701171875" text="Vehicle Number" />
+                <TableColumn fx:id="colVehicleType" prefWidth="129.33333587646484" text="Vehicle Type" />
+                <TableColumn fx:id="colDate" minWidth="0.0" prefWidth="89.0" text="Date" />
+                <TableColumn fx:id="colTime" prefWidth="66.0" text="Time" />
+            </columns>
+        </TableView>
+        <TextField fx:id="txtSearchCustomer" layoutX="255.0" layoutY="29.0" prefHeight="25.0" prefWidth="308.0" promptText="Search Customer by NIC">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </TextField>
+        <AnchorPane fx:id="paneScheduleEdit" disable="true" layoutX="21.0" layoutY="60.0" prefHeight="373.0" prefWidth="1014.0">
+            <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="69.0" layoutX="25.0" layoutY="281.0" opacity="0.1" stroke="BLACK" strokeType="INSIDE" width="207.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="146.0" layoutX="14.0" layoutY="130.0" opacity="0.07" stroke="BLACK" strokeType="INSIDE" width="224.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="146.0" layoutX="537.0" layoutY="143.0" opacity="0.07" stroke="BLACK" strokeType="INSIDE" width="224.0" />
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="184.0" layoutX="787.0" layoutY="146.0" opacity="0.07" stroke="BLACK" strokeType="INSIDE" width="215.0" />
+                <Text layoutX="382.0" layoutY="32.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Schedule ID :">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+                <JFXTextField fx:id="txtCustomerName" editable="false" labelFloat="true" layoutX="28.0" layoutY="195.0" prefHeight="25.0" prefWidth="200.0" promptText="Customer Name" />
+                <Text fx:id="lblScheduleID" layoutX="542.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="000">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Text>
+                <Line endX="-100.0" endY="178.0" layoutX="876.0" layoutY="154.0" startX="-100.0" startY="-108.0" />
+                <JFXComboBox fx:id="cmbCustomerNIC" editable="true" labelFloat="true" layoutX="28.0" layoutY="83.0" onAction="#cmbCustomerNICOnAction" prefHeight="25.0" prefWidth="200.0" promptText="Customer NIC">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXComboBox>
+                <JFXDatePicker fx:id="dpDate" defaultColor="#2f2fff" editable="false" layoutX="289.0" layoutY="80.0" onAction="#dpDateOnAction" prefHeight="30.0" prefWidth="200.0" promptText="Pick Date">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXDatePicker>
+            <JFXTextField fx:id="txtCustomerNic" editable="false" labelFloat="true" layoutX="28.0" layoutY="241.0" prefHeight="25.0" prefWidth="200.0" promptText="NIC No" />
+            <JFXTextField fx:id="txtCustomerId" editable="false" labelFloat="true" layoutX="28.0" layoutY="147.0" prefHeight="25.0" prefWidth="200.0" promptText="Customer ID" />
+            <Text layoutX="40.0" layoutY="305.0" strokeType="OUTSIDE" strokeWidth="0.0" text="No. of Dates Remaining">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtDatesRemaining" editable="false" layoutX="98.0" layoutY="317.0" prefHeight="25.0" prefWidth="41.0" style="-fx-alignment: center;" text="00">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></TextField>
+            <Text layoutX="312.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Date &amp; Time">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <Line endX="-100.0" endY="162.33334350585938" layoutX="363.0" layoutY="154.0" startX="-100.0" startY="-108.0" />
+            <JFXComboBox fx:id="cmbTime" labelFloat="true" layoutX="289.0" layoutY="132.0" onAction="#cmbTimeOnAction" prefHeight="25.0" prefWidth="200.0" promptText="Pick Time">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXComboBox>
+            <Line endX="-100.0" endY="162.33334350585938" layoutX="618.0" layoutY="164.0" startX="-100.0" startY="-108.0" />
+            <Text layoutX="69.0" layoutY="61.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Customer">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <JFXComboBox fx:id="cmbInstructorNIC" labelFloat="true" layoutX="551.0" layoutY="83.0" onAction="#cmbInstructorNICOnAction" prefHeight="25.0" prefWidth="200.0" promptText="Instructor NIC">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXComboBox>
+            <Text layoutX="579.0" layoutY="69.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Instructor">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="txtInstructorName" editable="false" labelFloat="true" layoutX="551.0" layoutY="201.0" prefHeight="25.0" prefWidth="200.0" promptText="Instructor Name" />
+            <JFXTextField fx:id="txtInstructorNic" editable="false" labelFloat="true" layoutX="551.0" layoutY="247.0" prefHeight="25.0" prefWidth="200.0" promptText="NIC No" />
+            <JFXTextField fx:id="txtInstructorId" editable="false" labelFloat="true" layoutX="551.0" layoutY="153.0" prefHeight="25.0" prefWidth="200.0" promptText="Instructor ID" />
+            <JFXComboBox fx:id="cmbVehicleNumber" labelFloat="true" layoutX="796.0" layoutY="88.0" onAction="#cmbVehicleNumberOnAction" prefHeight="25.0" prefWidth="200.0" promptText="Vehicle Number">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXComboBox>
+            <Text layoutX="854.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select Vehicle">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Text>
+            <JFXTextField fx:id="txtVehicleNumber" editable="false" labelFloat="true" layoutX="796.0" layoutY="206.0" prefHeight="25.0" prefWidth="200.0" promptText="Vehicle Number" />
+            <JFXTextField fx:id="txtVehicleId" editable="false" labelFloat="true" layoutX="796.0" layoutY="158.0" prefHeight="25.0" prefWidth="200.0" promptText="Vehicle ID" />
+                <JFXButton fx:id="btnAdd" buttonType="RAISED" disable="true" layoutX="352.0" layoutY="336.0" onAction="#btnAddOnAction" prefHeight="22.0" prefWidth="138.0" style="-fx-border-color: blue;" text="Add" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+                <JFXButton fx:id="btnDelete" disable="true" layoutX="532.0" layoutY="336.0" onAction="#btnDeleteOnAction" prefHeight="22.0" prefWidth="138.0" style="-fx-border-color: red;" text="Delete" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </JFXButton>
+            <JFXTextField fx:id="txtVehicleType" editable="false" labelFloat="true" layoutX="796.0" layoutY="247.0" prefHeight="25.0" prefWidth="200.0" promptText="Type" />
+            <JFXTextField fx:id="txtVehicleModel" editable="false" labelFloat="true" layoutX="796.0" layoutY="290.0" prefHeight="25.0" prefWidth="200.0" promptText="Model" />
+            <JFXButton fx:id="btnCheckAvailability" buttonType="RAISED" layoutX="337.0" layoutY="173.0" onAction="#btnCheckAvailabilityOnAction" prefHeight="32.0" prefWidth="91.0" style="-fx-border-color: green;" text="Check" textAlignment="CENTER">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </JFXButton>
+            </children>
+        </AnchorPane>
+      <JFXButton fx:id="btnSearchCustomer" buttonType="RAISED" layoutX="646.0" layoutY="22.0" onAction="#btnSearchCustomerOnAction" prefHeight="45.0" prefWidth="138.0" style="-fx-border-color: black;" text="Search Customer" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </JFXButton>
+    </children>
+</AnchorPane>
