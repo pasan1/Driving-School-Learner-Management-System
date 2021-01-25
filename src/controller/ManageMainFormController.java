@@ -49,6 +49,11 @@ public class ManageMainFormController {
         loadDefaultForm();
         setDefaults();
         loadDateTime();
+        try {
+            lblUserName.setText("Hi "+bo.getUserFullName(bo.getUserId()));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         System.out.println("userId: " + this.userId);
     }
 

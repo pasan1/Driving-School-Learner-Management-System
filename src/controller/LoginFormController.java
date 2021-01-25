@@ -60,6 +60,9 @@ public class LoginFormController {
                     if (txtPassword.getText().equals(("USER"))) {
                         loadSignUpForm();
                     } else {
+                        bo.setUserId(txtUserName.getText());
+                        new AccountFormController().setUserId(bo.getUserId(userName));
+                        new ManageMainFormController().setUserId(bo.getUserId(userName));
                         switch (bo.getDesignation(userName)) {
                             case "Manager":
                                 loadManagerForm();
@@ -71,9 +74,6 @@ public class LoginFormController {
                                 loadInActiveForm();
                                 break;
                         }
-                        bo.setUserId(txtUserName.getText());
-                        new AccountFormController().setUserId(bo.getUserId(userName));
-                        new ManageMainFormController().setUserId(bo.getUserId(userName));
                     }
                 } else {
                     lblError.setVisible(true);

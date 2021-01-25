@@ -10,6 +10,6 @@
     <orderEntry type="library" name="mysql-connector-java-8.0.21" level="project" />
     <orderEntry type="library" name="jfoenix-8.0.10" level="project" />
     <orderEntry type="library" name="jasper-libries" level="project" />
-    <orderEntry type="library" name="AnimateFX-1.2.0" level="project" />
+    <orderEntry type="library" name="AnimateFX-1.2.2" level="project" />
   </component>
 </module>
