@@ -2,7 +2,7 @@ package entity;
 
 import java.sql.Date;
 
-public class Custom implements SuperEntity {
+public class    Custom implements SuperEntity {
     private String customerId;
     private String firstName;
     private String lastName;
