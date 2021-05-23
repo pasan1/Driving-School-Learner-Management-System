@@ -36,7 +36,6 @@ public class LoginFormController {
 
     UserBO bo = (UserBO) BOFactory.getInstance().getBO(BOFactory.BOTypes.USER);
 
-
     public void initialize() {
         lblError.setVisible(false);
         txtUserName.requestFocus();
