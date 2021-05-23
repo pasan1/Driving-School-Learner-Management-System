@@ -150,8 +150,8 @@ public class AccountFormController {
                         txtDrivingLicenseNo.requestFocus();
                     }
                 } else {
-                    txtLastName.setFocusColor(Paint.valueOf("red"));
-                    txtLastName.requestFocus();
+                    txtNIC.setFocusColor(Paint.valueOf("red"));
+                    txtNIC.requestFocus();
                 }
             } else {
                 txtLastName.setFocusColor(Paint.valueOf("red"));
