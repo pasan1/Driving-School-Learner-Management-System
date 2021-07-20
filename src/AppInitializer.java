@@ -17,27 +17,27 @@ public class AppInitializer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws IOException {
-        //--- Catch fxml file
-        URL resource = this.getClass().getResource("/view/LoginForm.fxml");
+            //--- Catch fxml file
+            URL resource = this.getClass().getResource("/view/LoginForm.fxml");
 
-        //--- load
-        Parent load = FXMLLoader.load(resource);
+            //--- load
+            Parent load = FXMLLoader.load(resource);
 
-        //--- Create Scene
-        Scene scene = new Scene(load);
+            //--- Create Scene
+            Scene scene = new Scene(load);
 
-        //--- To remove Title Bar
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
-        scene.setFill(Color.TRANSPARENT);
+            //--- To remove Title Bar
+            primaryStage.initStyle(StageStyle.TRANSPARENT);
+            scene.setFill(Color.TRANSPARENT);
 
 
-        //--- Set stage
-        primaryStage.setScene(scene);
+            //--- Set stage
+            primaryStage.setScene(scene);
 
-        //--- Show
-        primaryStage.show();
+            //--- Show
+            primaryStage.show();
 
-        primaryStage.setTitle("Shan Learner's LMS");
+            primaryStage.setTitle("Shan Learner's LMS");
 
     }
 }
